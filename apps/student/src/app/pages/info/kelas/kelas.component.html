@@ -1,0 +1,49 @@
+<div class="title">
+  <p>Class Info</p>
+</div>
+<div class="container">
+  <div class="box-class">
+    <table id="class">
+      <tr>
+        <td>Class ID :</td>
+        <td>{{ classData?._id }}</td>
+      </tr>
+      <tr>
+        <td>Class Name :</td>
+        <td>
+          {{ classData?.class_name }}
+        </td>
+      </tr>
+      <tr>
+        <td>Home Room Teacher :</td>
+        <td>
+          {{ classData?.teacher.first_name }} {{ classData?.teacher.last_name }}
+        </td>
+      </tr>
+      <tr>
+        <td>Phone :</td>
+        <td>
+          {{ classData?.teacher.phone }}
+        </td>
+      </tr>
+    
+      <tr>
+        <td>Email :</td>
+        <td>
+          {{ classData?.teacher.email }}
+        </td>
+      </tr>
+    
+      <tr>
+        <td>Subject Kelas-{{ classData?.class_name }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let subj of classData?.subject">{{ subj.subject_name }}</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+</div>
+

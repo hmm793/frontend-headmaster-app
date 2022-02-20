@@ -1,0 +1,12 @@
+<table id="ranks">
+  <tr>
+    <th>Rank</th>
+    <th>Name</th>
+    <th>Total Score</th>
+  </tr>
+  <tr *ngFor="let data of studentData; let i = index">
+    <td>{{ i + 1 }}</td>
+    <td>{{ data.first_name }} {{ data.last_name }}</td>
+    <td>{{ data.totalScore }}</td>
+  </tr>
+</table>

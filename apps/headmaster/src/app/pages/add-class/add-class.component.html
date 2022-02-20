@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="box-add-class">
+    <form [formGroup]="form!">
+      <div class="name-form"><h3>Add New Class</h3></div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Class Name</label
+        >
+        <input
+          formControlName="class_name"
+          type="text"
+          class="form-control"
+          id="exampleFormControlInput1"
+        />
+
+        <small *ngIf="classForm['class_name'].invalid && isSubmitted"
+          >*Class Name is required</small
+        >
+      </div>
+      <div class="mb-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Home Room Teacher</mat-label>
+          <mat-select [(value)]="selectedTeacher">
+            <mat-option
+              *ngFor="let teacher of allTeacher"
+              [value]="teacher._id"
+              >{{ teacher.first_name }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+        <small *ngIf="selectedTeacher.length === 0 && isSubmitted"
+          >*Home Room Teacher is required</small
+        >
+      </div>
+      <div class="mb-3">
+        <mat-form-field appearance="fill">
+          <mat-label>subject</mat-label>
+          <mat-select [(value)]="selectedValue" multiple>
+            <mat-option
+              *ngFor="let subject of allSubject"
+              [value]="subject._id"
+              >{{ subject.subject_name }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+
+        <small *ngIf="selectedValue.length === 0 && isSubmitted"
+          >*Subjects is required</small
+        >
+        <!-- {{ selectedValue }} -->
+      </div>
+      <div class="mb-3">
+        <button class="save" (click)="submitData()"><p>Save</p></button>
+      </div>
+    </form>
+  </div>
+</div>

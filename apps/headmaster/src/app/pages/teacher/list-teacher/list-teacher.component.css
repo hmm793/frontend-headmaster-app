@@ -1,0 +1,103 @@
+/* #teachers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#teachers td,
+#teachers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-family: sans-serif;
+  background: hsl(0deg 0% 98%);
+}
+
+#teachers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#teachers tr:hover {
+  background-color: #ddd;
+}
+
+#teachers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04aa6d;
+  color: white;
+}
+p {
+  font-size: 13px;
+}
+button{
+  width: 75px;
+}
+.detail{
+  background: #198754;
+}
+.box-table {
+  margin-top: 40px;
+  background: #31353D;
+} */
+
+
+
+
+.statis {
+	color: var(--dk-gray-100);
+}
+
+.statis .box {
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+  
+}
+
+.statis .box h3:after {
+	content: "";
+	height: 2px;
+	width: 70%;
+	margin: auto;
+	background-color: rgba(255, 255, 255, 0.12);
+	display: block;
+	margin-top: 10px;
+}
+
+.statis .box i {
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	font-size: 22px;
+	padding: 15px;
+	top: -25px;
+	left: -25px;
+	background-color: rgba(255, 255, 255, 0.15);
+	line-height: 60px;
+	text-align: right;
+	border-radius: 50%;
+}
+
+.main-color {
+	color: #ffc107
+}
+
+.bg-cards {
+  background-color: #31353D;
+}
+
+.text-cards {
+  color: lightgray;
+}
+
+.table {
+  background-color: #818896;
+}
+
+/* .table-box {
+  text-align: -webkit-center;
+  margin: 20px;
+  background-color: #31353D;
+} */

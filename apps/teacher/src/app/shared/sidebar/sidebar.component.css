@@ -1,0 +1,33 @@
+.logo {
+  padding: 20px;
+  width: 75%;
+}
+.logo img {
+  max-width: 100%;
+}
+
+.links ul {
+  margin: 0;
+  padding: 0;
+}
+
+.links ul li {
+  display: block;
+  list-style: none;
+  width: 100%;
+}
+.links ul li a {
+  color: var(--surface-a);
+  padding: 10px 15px;
+  display: block;
+  width: 83%;
+  text-decoration: none;
+}
+.links ul li a mat-icon {
+  margin-right: 8px;
+  margin-top: -3px;
+  float: left;
+}
+.links ul li a:hover {
+  background-color: rgb(91, 214, 245);
+}

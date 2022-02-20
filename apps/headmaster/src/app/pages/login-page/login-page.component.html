@@ -1,0 +1,56 @@
+
+  <div class="body">
+    <form [formGroup]="loginFormGroup" class="box">
+      <h1>Login</h1>
+      <div class="container">
+        <div>
+          
+          <input
+            formControlName="email"
+            type="text"
+            placeholder="Enter Email"
+            name="email"
+            id="email"
+            required
+          />
+
+          <small
+            *ngIf="loginForm['email'].invalid && isSubmitted"
+            class="p-error"
+            ><span *ngIf="loginForm['email'].errors?.['required']"
+              >*Email is required</span
+            >
+            <span *ngIf="loginForm['email'].errors?.['email']"
+              >*Email is invalid</span
+            ></small
+          >
+        </div>
+        <div>
+          
+          <input
+            formControlName="password"
+            type="password"
+            placeholder="Enter Password"
+            name="psw"
+            id="psw"
+            required
+          />
+          <small *ngIf="loginForm['password'].invalid && isSubmitted"
+            ><span *ngIf="loginForm['password'].errors?.['required']"
+              >*Email is required</span
+            >
+          </small>
+        </div>
+
+        <hr />
+
+        <p>
+          <a (click)="openDialog()" style="color: dodgerblue">Forget Password</a
+          >.
+        </p>
+
+        <input value="Login" type="submit" class="registerbtn" (click)="submit()">
+          
+      </div>
+    </form>
+  </div>

@@ -1,0 +1,276 @@
+<!-- <form [formGroup]="form">
+  <div>
+    <label>First Name</label>
+    <input formControlName="first_name" name="first_name" />
+  </div>
+  <div>
+    <label>Last Name</label>
+    <input formControlName="last_name" name="last_name" />
+  </div>
+  <div>
+    <label>Gender</label>
+    <input formControlName="gender" name="gender" />
+  </div>
+  <div>
+    <label>Blood Group</label>
+    <input formControlName="blood_group" name="blood_group" />
+  </div>
+  <div>
+    <label>Religion</label>
+    <input formControlName="religion" name="religion" />
+  </div>
+  <div>
+    <label>Address</label>
+    <input formControlName="address" name="address" />
+  </div>
+  <div>
+    <label>Phone</label>
+    <input formControlName="phone" name="phone" />
+  </div>
+  <div>
+    <label>Short Bio</label>
+    <input formControlName="short_bio" name="short_bio" />
+  </div>
+</form>
+
+<button mat-raised-button (click)="editOrtu()">Edit Student Data</button>
+
+<div>
+  <label>Image</label>
+  <img
+    [src]="imageDisplay ? imageDisplay : imageParent"
+    alt=""
+    style="width: 200px"
+  />
+</div>
+
+<form [formGroup]="formImage">
+ 
+  <div class="mb-3">
+    <label for="formFile" class="form-label">Edit Parent Image</label>
+    <input
+      class="form-control"
+      type="file"
+      id="formFile"
+      accept="image/*"
+      (change)="editImage($event)"
+    />
+  </div>
+</form>
+
+<button mat-raised-button (click)="submitImage()">Update Image</button> -->
+
+<div class="title-edit">
+  <p>Edit Parent</p>
+</div>
+<div class="container">
+  <div class="detail-profil">
+    <div class="photo">
+      <div class="container-profil">
+        <img
+          [src]="imageDisplay ? imageDisplay : imageParent"
+          alt=""
+          style="width: 200px"
+          class="photo-profil"
+        />
+      </div>
+      <form [formGroup]="formImage">
+        <input
+          accept="image/*"
+          (change)="editImage($event)"
+          class="form-control"
+          type="file"
+          id="formFile"
+        />
+      </form>
+      <div class="save-image">
+        <input type="submit" (click)="submitImage()" value="Save Image" />
+      </div>
+    </div>
+    <div class="bio">
+      <form [formGroup]="form">
+        <label for="validationCustom01" class="form-label">First name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          value="Mark"
+          required
+          formControlName="first_name"
+          name="firs_tname"
+        />
+        <small *ngIf="parentForm['first_name'].invalid && isSubmitted"
+          >*First Name is required</small
+        >
+
+        <label for="validationCustom01" class="form-label">Last name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          value="Mark"
+          required
+          formControlName="last_name"
+          name="last_name"
+        />
+
+        <small *ngIf="parentForm['last_name'].invalid && isSubmitted"
+          >*Last Name is required</small
+        >
+
+        <label for="validationCustom01" class="form-label">Gender</label>
+        <!-- <input
+            type="text"
+            class="form-control"
+            id="validationCustom01"
+            value="Mark"
+            required
+            formControlName="gender"
+            name="gender"
+          /> -->
+        <select formControlName="gender" [(ngModel)]="selectedGender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <small *ngIf="parentForm['gender'].invalid && isSubmitted"
+          >*Gender is required</small
+        >
+
+        <label for="date_of_birth">Date of Birth</label>
+        <br />
+        <input
+          formControlName="date_of_birth"
+          type="date"
+          id="date_of_birth"
+          name="date_of_birth"
+        />
+
+        <small *ngIf="parentForm['date_of_birth'].invalid && isSubmitted"
+          >*Date of birth is required</small
+        >
+        <br />
+        <label for="occupation">Occupation</label>
+        <input
+          formControlName="occupation"
+          type="text"
+          id="occupation"
+          name="occupation"
+        />
+
+        <small *ngIf="parentForm['occupation'].invalid && isSubmitted"
+          >*Occupation is required</small
+        >
+
+        <label for="blood_group">Blood Group</label>
+        <!-- <input
+            formControlName="blood_group"
+            type="text"
+            id="blood_group"
+            name="blood_group"
+          /> -->
+        <select formControlName="blood_group" [(ngModel)]="selectedBloodGroup">
+          <option value="A-">A-</option>
+          <option value="A+">A+</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="AB-">AB-</option>
+          <option value="AB+">AB+</option>
+        </select>
+
+        <small *ngIf="parentForm['blood_group'].invalid && isSubmitted"
+          >*Blood Group is required</small
+        >
+
+        <label for="religion">Religion</label>
+        <select formControlName="religion" [(ngModel)]="selectedReligion">
+          <option value="Islam">Islam</option>
+          <option value="Hindu">Hindu</option>
+          <option value="Buddish">Buddhist</option>
+          <option value="Christian">Christian</option>
+          <option value="Others">Others</option>
+        </select>
+
+        <small *ngIf="parentForm['religion'].invalid && isSubmitted"
+          >*Religion is required</small
+        >
+
+        <label for="email">Email</label>
+        <input formControlName="email" type="email" id="email" name="email" />
+        <small *ngIf="parentForm['email'].invalid && isSubmitted"
+          ><span *ngIf="parentForm['email'].errors?.['required']"
+            >*Email is required</span
+          >
+          <span *ngIf="parentForm['email'].errors?.['email']"
+            >*Email is invalid</span
+          ></small
+        >
+
+        <label for="address">Address</label>
+        <input
+          formControlName="address"
+          type="text"
+          id="address"
+          name="address"
+        />
+        <small *ngIf="parentForm['address'].invalid && isSubmitted"
+          >*Address is required</small
+        >
+
+        <label for="phone">Phone</label>
+        <input formControlName="phone" type="text" id="phone" name="phone" />
+
+        <small *ngIf="parentForm['phone'].invalid && isSubmitted"
+          >*Phone is required</small
+        >
+
+        <label for="phone">Status</label>
+        <!-- <input formControlName="status" type="text" id="status" name="status" /> -->
+        <select formControlName="status" [(ngModel)]="selectedStatus">
+          <option value="active">Active</option>
+          <option value="non-active">Non-active</option>
+        </select>
+
+        <small *ngIf="parentForm['status'].invalid && isSubmitted"
+          >*Status is required</small
+        >
+
+        <mat-label>Child</mat-label>
+        <mat-chip-list #chipList aria-label="Child selection">
+          <mat-chip *ngFor="let child of children" (removed)="remove(child)">
+            {{ child }}
+            <button matChipRemove>
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip>
+          <input
+            #childInput
+            [formControl]="childCtrl"
+            [matAutocomplete]="auto"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="add($event)"
+          />
+        </mat-chip-list>
+        <mat-autocomplete
+          #auto="matAutocomplete"
+          (optionSelected)="selected($event)"
+        >
+          <mat-option
+            *ngFor="let child of filteredChildren | async"
+            [value]="child"
+          >
+            {{ child }}
+          </mat-option>
+        </mat-autocomplete>
+
+        <small *ngIf="children.length === 0 && isSubmitted"
+          >*Child is required</small
+        >
+      </form>
+      <br />
+      <input type="submit" (click)="editOrtu()" value="Edit Parent Data" />
+    </div>
+  </div>
+</div>

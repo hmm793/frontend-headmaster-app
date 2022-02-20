@@ -1,0 +1,301 @@
+<section class="statis mt-4 text-center ">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-10 mb-4 mb-lg-0">
+      <div class="box bg-cards p-auto">
+        <i class="uil-eye"></i>
+        <h3 class="text-cards">Add New Student</h3>
+        <div class="chart-box">
+          
+          <form class="row" [formGroup]="form!">
+            <div class="mb-3 col-md-6 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1"
+                >First Name</label
+              >
+              <input
+                formControlName="first_name"
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+              <small *ngIf="studentForm['first_name'].invalid && isSubmitted"
+                >*First Name is required</small
+              >
+            </div>
+            <div class="col-md-6 mb-3 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1"
+                >Last Name</label
+              >
+              <input
+                formControlName="last_name"
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+              <small *ngIf="studentForm['last_name'].invalid && isSubmitted"
+                >*Last Name is required</small
+              >
+            </div>
+            <div class="mb-3 text-cards col-md-6">
+              <label for="exampleFormControlInput1" class="d-flex pb-1"
+                >Father Name</label
+              >
+              <input
+                formControlName="father_name"
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+      
+              <small *ngIf="studentForm['father_name'].invalid && isSubmitted"
+                >*Last Name is required</small
+              >
+            </div>
+            <div class="mb-3 col-md-6 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1"
+                >Mother Name</label
+              >
+              <input
+                formControlName="mother_name"
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+      
+              <small *ngIf="studentForm['mother_name'].invalid && isSubmitted"
+                >*Last Name is required</small
+              >
+            </div>
+            <div class="mb-3 col-md-6 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1"
+                >Date of Birth</label
+              >
+              <input
+                formControlName="date_of_birth"
+                type="date"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+      
+              <small *ngIf="studentForm['date_of_birth'].invalid && isSubmitted"
+                >*Date of birth is required</small
+              >
+              <br />
+            </div>
+
+            <div class="mb-3 col-md-6 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1">Gender</label>
+              <select
+                formControlName="gender"
+                [(ngModel)]="selectedGender"
+                class="form-control"
+                id="exampleFormControlInput1"
+              >
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+      
+              <small *ngIf="studentForm['gender'].invalid && isSubmitted"
+                >*Gender is required</small
+              >
+            </div>
+      
+      
+            <div class="mb-3 col-md-6 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1"
+                >Father Occupation</label
+              >
+              <input
+                formControlName="father_occupation"
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+      
+              <small *ngIf="studentForm['father_occupation'].invalid && isSubmitted"
+                >*Father Occupation is required</small
+              >
+            </div>
+            <div class="mb-3 col-md-6 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1"
+                >Blood Group</label
+              >
+              <select
+                formControlName="blood_group"
+                [(ngModel)]="selectedBloodGroup"
+                class="form-control"
+                id="exampleFormControlInput1"
+              >
+                <option value="A-">A-</option>
+                <option value="A+">A+</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB-">AB-</option>
+                <option value="AB+">AB+</option>
+              </select>
+              <small *ngIf="studentForm['blood_group'].invalid && isSubmitted"
+                >*Blood Group is required</small
+              >
+            </div>
+      
+      
+            <div class="mb-3 col-md-6 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1"
+                >Religion</label
+              >
+              <select
+                formControlName="religion"
+                [(ngModel)]="selectedReligion"
+                class="form-control"
+                id="exampleFormControlInput1"
+              >
+                <option value="Islam">Islam</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Buddhist">Buddhist</option>
+                <option value="Christian">Christian</option>
+                <option value="Others">Others</option>
+              </select>
+      
+              <small *ngIf="studentForm['religion'].invalid && isSubmitted"
+                >*Religion is required</small
+              >
+            </div>
+      
+            <div class="mb-3 col-md-6 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1">Email</label>
+              <input
+                formControlName="email"
+                type="email"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="name@example.com"
+              />
+      
+              <small *ngIf="studentForm['email'].invalid && isSubmitted"
+                ><span *ngIf="studentForm['email'].errors?.['required']"
+                  >*Email is required</span
+                >
+                <span *ngIf="studentForm['email'].errors?.['email']"
+                  >*Email is invalid</span
+                ></small
+              >
+            </div>
+      
+            <div class="mb-3 col-md-6 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1"
+                >YearAcademic</label
+              >
+              <input
+                formControlName="year_academic"
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+              <small *ngIf="studentForm['year_academic'].invalid && isSubmitted"
+                >*Year Academic is required</small
+              >
+            </div>
+      
+            <div class="mb-3 col-md-6 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1"
+                >Addmission Date</label
+              >
+              <input
+                formControlName="addmission_date"
+                type="date"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+      
+              <small *ngIf="studentForm['addmission_date'].invalid && isSubmitted"
+                >*Addmission Date is required</small
+              >
+            </div>
+      
+            <div class="mb-3 col-md-6 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1">Class</label>
+              <select
+                formControlName="kelas"
+                [(ngModel)]="selectedClass"
+                class="form-control"
+                id="exampleFormControlInput1"
+              >
+                <option *ngFor="let kel of allClass" value="{{ kel._id }}">
+                  {{ kel.class_name }}
+                </option>
+              </select>
+              <small *ngIf="studentForm['kelas'].invalid && isSubmitted"
+                >*Class is required</small
+              >
+            </div>
+      
+            <div class="mb-3 col-md-6 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1">Address</label>
+              <input
+                formControlName="address"
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+              <small *ngIf="studentForm['address'].invalid && isSubmitted"
+                >*Address is required</small
+              >
+            </div>
+      
+            <div class="mb-3 col-md-6 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1">Phone</label>
+              <input
+                formControlName="phone"
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+              <small *ngIf="studentForm['phone'].invalid && isSubmitted"
+                >*Phone is required</small
+              >
+            </div>
+            <div class="mb-3 col-md-6 text-cards">
+              <label for="formFile" class="d-flex pb-1">Upload Student Photo</label>
+              <input
+                class="form-control"
+                type="file"
+                id="formFile"
+                accept="image/*"
+                (change)="uploadImage($event)"
+              />
+              <small *ngIf="studentForm['image'].invalid && isSubmitted"
+                >*Image is required</small
+              >
+            </div>
+      
+            <div class="mb-3 text-cards">
+              <label for="exampleFormControlInput1" class="d-flex pb-1"
+                >Short Bio</label
+              >
+              <input
+                formControlName="short_bio"
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+              />
+              <small *ngIf="studentForm['short_bio'].invalid && isSubmitted"
+                >*Short Bio is required</small
+              >
+            </div>
+      
+            <div>
+              <img [src]="imageDisplay" alt="" />
+            </div>
+            
+            <div class="mb-3 col-md-12 text-cards justify-content-center">
+              <button class="btn btn-secondary text-cards" (click)="submitData()"><p>Save</p></button>
+            </div>
+            
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

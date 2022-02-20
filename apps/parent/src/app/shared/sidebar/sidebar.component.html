@@ -1,0 +1,51 @@
+<div class="teacher-sidebar">
+  <div class="logo">
+    <img src="/assets/images/logo.png" alt="" />
+  </div>
+  <div class="links">
+    <ul>
+      <li>
+        <a routerLink="/dashboard"
+          ><mat-icon aria-hidden="false">home</mat-icon>Dashboard</a
+        >
+      </li>
+
+      <li>
+        <a (click)="showProfile = !showProfile"
+          ><mat-icon aria-hidden="false">person</mat-icon>Profile</a
+        >
+      </li>
+
+      <li *ngIf="showProfile" style="margin-left: 20px; width: 86.5%">
+        <a routerLink="/detail-profile"
+          ><mat-icon aria-hidden="false">info</mat-icon>Detail Profile</a
+        >
+      </li>
+
+      <li *ngIf="showProfile" style="margin-left: 20px; width: 86.5%">
+        <a routerLink="/edit-profile"
+          ><mat-icon aria-hidden="false">edit</mat-icon>Edit Profile</a
+        >
+      </li>
+
+      <li (click)="showProfile2 = !showProfile2">
+        <a><mat-icon aria-hidden="false">info</mat-icon>Score Info </a>
+      </li>
+      <div *ngIf="showProfile2">
+        <li
+          *ngFor="let child of parentData.child"
+          style="margin-left: 20px; width: 86.35%"
+        >
+          <a (click)="goToLink(child._id)"
+            ><mat-icon aria-hidden="false">person</mat-icon
+            >{{ child.first_name }}
+          </a>
+        </li>
+      </div>
+
+      <li>
+        <a (click)="logoutUser()"><mat-icon>logout</mat-icon>Logout 1</a>
+      </li>
+    </ul>
+  </div>
+</div>

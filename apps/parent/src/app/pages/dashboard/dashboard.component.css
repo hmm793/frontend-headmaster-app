@@ -1,0 +1,98 @@
+img {
+  clip-path: circle();
+  max-height: 200px;
+  max-height: 145px;
+}
+.bio {
+  display: flex;
+}
+.box-mykid.ng-star-inserted {
+  /* border: 1px solid red; */
+  background: white;
+  border-radius: 10px;
+  display: flex;
+}
+.calendar {
+  width: 100%;
+}
+.title-dashboard {
+  font-size: 35px;
+  margin: 20px;
+  color: #ffffffa3;
+  letter-spacing: 2px;
+  font-family: sans-serif;
+}
+.box-mykid.ng-star-inserted {
+  /* border: 1px solid red; */
+  background: transparent;
+  border-radius: 10px;
+  display: flex;
+  padding: 15px;
+  margin: 20px 0;
+}
+.box-bio {
+  margin-right: 10px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  height: max-content;
+  box-shadow: 4px 4px #999999;
+  min-width: 260px;
+}
+.photo {
+  margin: 10px;
+  margin-bottom: 45px;
+  border-radius: 100%;
+}
+.bio {
+  display: flex;
+  margin: 12px 0;
+  /* margin-bottom: 25px; */
+}
+.name1 {
+  width: 106px;
+  font-size: 15px;
+  color: #4b4b4b;
+  font-weight: normal;
+  letter-spacing: 2px;
+  font-family: sans-serif;
+}
+.name2 {
+  /* width: 111px; */
+  font-size: 15px;
+  color: #4b4b4b;
+  font-weight: normal;
+  letter-spacing: 2px;
+  font-family: sans-serif;
+}
+.calendar {
+  width: 100%;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 4px 4px #999999;
+}
+button {
+  background: green;
+  color: white;
+  padding: 10px;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  border-radius: 8px;
+  margin-top: 43px;
+}
+.title-mykid {
+  font-size: 40px;
+  font-weight: 300;
+  color: #ffffffa3;
+  margin: 40px 0;
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  text-align: center;
+}
+.container {
+  /* background: white;
+  border-radius: 10px;
+  border: 1px solid #c5c5c5; */
+  margin-top: 20px;
+}

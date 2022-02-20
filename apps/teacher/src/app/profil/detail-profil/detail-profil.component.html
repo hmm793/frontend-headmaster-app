@@ -1,0 +1,163 @@
+<!-- <div class="title-profil">
+  <p>My Profile</p>
+</div>
+<div class="card" style="margin: 50px;">
+  <div  class="card-body">
+    <div class="profil">
+      <div class="photo">
+        <img class="photo-profil" src="{{ teacherData.image }}" alt="" />
+      </div>
+    </div>
+    <div class="bio">
+      <div class="edit"><a routerLink="/edit-profil">
+        <button mat-raised-button color="primary">Edit Profil</button>
+      </a>
+      </div>
+      <div class="name-profil" disabled="true">
+        <p>{{ teacherData.first_name + '  ' + teacherData.last_name}}</p>
+      </div>
+      <div class="name-1">
+        <p class="col-12 text-center">{{teacherData.short_bio}}/p>
+      </div>
+
+      <table>
+        <tr class="">
+          <td class="name1 myTable">ID :</td>
+          <td class="name2">{{teacherData._id}}</td>
+        </tr>
+      </table>
+
+      <div class="box-name">
+        <div class="name1">ID :</div>
+        <div class="name2" name="id" disabled="true">{{ teacherData._id }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Name</span> :</div>
+        <div class="name2">
+          {{ teacherData.first_name }} {{ teacherData.last_name }}
+        </div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Gender</span> :</div>
+        <div class="name2" disabled="true">{{ teacherData.gender }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Date of Birth</span> :</div>
+        <div class="name2" disabled="true">{{ teacherData.date_of_birth }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Blood Group</span> :</div>
+        <div class="name2" disabled="true">{{ teacherData.blood_group }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Religion</span> :</div>
+        <div class="name2" disabled="true">{{ teacherData.religion }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Email</span> :</div>
+        <div class="name2" disabled="true">{{ teacherData.email }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Addmission Date</span> :</div>
+        <div class="name2" disabled="true">
+          {{ teacherData.addmission_date }}
+        </div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Address</span> :</div>
+        <div class="name2" disabled="true">{{ teacherData.address }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Phone</span> :</div>
+        <div class="name2" disabled="true">{{ teacherData.phone }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Short Bio</span> :</div>
+        <div class="name2" disabled="true">{{ teacherData.short_bio }}</div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="student-profile py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent text-center">
+            <img class="profile_img" src="{{teacherData.image}}" alt="">
+            <h3>{{ teacherData.first_name + '  ' + teacherData.last_name}}</h3>
+          </div>
+          <div class="card-body">
+            <p class="mb-0">{{teacherData.short_bio}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Teacher Profile</h3>
+          </div>
+          <div class="card-body pt-0">
+            <table class="table table-bordered">
+              <tr>
+                <th width="30%">ID</th>
+                <td width="2%">:</td>
+                <td>{{teacherData._id}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Name</th>
+                <td width="2%">:</td>
+                <td>{{ teacherData.first_name + '  ' + teacherData.last_name}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Gender</th>
+                <td width="2%">:</td>
+                <td>{{teacherData.gender}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Date Of Birth</th>
+                <td width="2%">:</td>
+                <td>{{teacherData.date_of_birth}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Blood Group</th>
+                <td width="2%">:</td>
+                <td>{{teacherData.blood_group}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Religion</th>
+                <td width="2%">:</td>
+                <td>{{teacherData.religion}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Email</th>
+                <td width="2%">:</td>
+                <td>{{teacherData.email}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Admission Date</th>
+                <td width="2%">:</td>
+                <td>{{teacherData.addmission_date}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Phone</th>
+                <td width="2%">:</td>
+                <td>{{teacherData.phone}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Address</th>
+                <td width="2%">:</td>
+                <td>{{teacherData.address}}</td>
+              </tr>
+            </table>
+            <div class="edit"><a routerLink="/edit-profil">
+              <button mat-raised-button color="primary">Edit Profil</button>
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

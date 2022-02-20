@@ -1,0 +1,147 @@
+/* .title {
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 18px;
+  margin-left: 35px;
+}
+.route {
+  font-size: 15px;
+  margin-top: 25px;
+  margin-left: 40px;
+}
+span {
+  color: #cd3a0e;
+}
+.name-form {
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 28px;
+}
+.box-form {
+  border: 1px solid;
+  width: 90%;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 11px;
+}
+li {
+  list-style: none;
+}
+input[type='date'] {
+  margin: 0 53px;
+}
+select {
+  margin: 0;
+}
+input[type='date'].form-control {
+  margin-left: 0;
+}
+form { 
+  margin: 0 auto;
+}
+.gender span {
+  color: #212529;
+}
+.mat-tab-label {
+  color: black !important;
+}
+.save {
+  height: 40px;
+  width: 90px;
+  margin: 0 11px;
+  text-align: center;
+  border-radius: 7px;
+  background: #dda705;
+  border: none;
+  padding: 9px 0;
+  font-family: sans-serif;
+}
+.reset {
+  height: 60px;
+  width: 97px;
+  margin: 0 11px;
+  align-items: center;
+  text-align: center;
+  border-radius: 12px;
+  background: #fff;
+  border: none;
+  box-shadow: 4px 5px lightgrey;
+}
+.reset:hover {
+  background: #dda705;
+}
+button p {
+  font-family: sans-serif;
+  font-weight: bolder;
+  letter-spacing: 0.1rem;
+}
+.button {
+  margin-top: 10px;
+}
+small {
+  display: block;
+  margin-bottom: 10px;
+  color: red;
+}
+.box-add-teacher{
+  border: 1px solid rgb(196, 196, 196);
+  width: 100vh;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+} */
+
+
+
+.statis {
+	color: var(--dk-gray-100);
+}
+
+.statis .box {
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+  
+}
+
+.statis .box h3:after {
+	content: "";
+	height: 2px;
+	width: 70%;
+	margin: auto;
+	background-color: rgba(255, 255, 255, 0.12);
+	display: block;
+	margin-top: 10px;
+}
+
+.statis .box i {
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	font-size: 22px;
+	padding: 15px;
+	top: -25px;
+	left: -25px;
+	background-color: rgba(255, 255, 255, 0.15);
+	line-height: 60px;
+	text-align: right;
+	border-radius: 50%;
+}
+
+.main-color {
+	color: #ffc107
+}
+
+.bg-cards {
+  background-color: #31353D;
+}
+
+.text-cards {
+  color: lightgray;
+}
+
+.chart-box {
+  text-align: -webkit-center;
+  margin: 20px;
+}

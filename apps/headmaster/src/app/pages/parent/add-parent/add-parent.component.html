@@ -1,0 +1,250 @@
+
+    <div class="container">
+      <div class="box-add-parent">
+        <form [formGroup]="form!">
+          <div class="name-form"><p>Add New Parent</p></div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >First Name</label
+            >
+            <input
+              formControlName="first_name"
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+            />
+            <small *ngIf="parentForm['first_name'].invalid && isSubmitted"
+              >*First Name is required</small
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Last Name</label
+            >
+            <input
+              formControlName="last_name"
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+            />
+            <small *ngIf="parentForm['last_name'].invalid && isSubmitted"
+              >*Last Name is required</small
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Gender</label
+            >
+            <select
+              formControlName="gender"
+              [(ngModel)]="selectedGender"
+              class="form-control"
+              id="exampleFormControlInput1"
+            >
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+
+            <small *ngIf="parentForm['gender'].invalid && isSubmitted"
+              >*Gender is required</small
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Date of Birth</label
+            >
+            <input
+              formControlName="date_of_birth"
+              type="date"
+              class="form-control"
+              id="exampleFormControlInput1"
+            />
+
+            <small *ngIf="parentForm['date_of_birth'].invalid && isSubmitted"
+              >*Date of birth is required</small
+            >
+            <br />
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Occupation</label
+            >
+            <input
+              formControlName="occupation"
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+            />
+
+            <small *ngIf="parentForm['occupation'].invalid && isSubmitted"
+              >*Occupation is required</small
+            >
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Blood Group</label
+            >
+
+            <select
+              formControlName="blood_group"
+              [(ngModel)]="selectedBloodGroup"
+              class="form-control"
+              id="exampleFormControlInput1"
+            >
+              <option value="A-">A-</option>
+              <option value="A+">A+</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="AB-">AB-</option>
+              <option value="AB+">AB+</option>
+            </select>
+            <small *ngIf="parentForm['blood_group'].invalid && isSubmitted"
+              >*Blood Group is required</small
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Religion</label
+            >
+
+            <select
+              formControlName="religion"
+              [(ngModel)]="selectedReligion"
+              class="form-control"
+              id="exampleFormControlInput1"
+            >
+              <option value="Islam">Islam</option>
+              <option value="Hindu">Hindu</option>
+              <option value="Buddish">Buddhist</option>
+              <option value="Christian">Christian</option>
+              <option value="Others">Others</option>
+            </select>
+
+            <small *ngIf="parentForm['religion'].invalid && isSubmitted"
+              >*Religion is required</small
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Email</label
+            >
+            <input
+              formControlName="email"
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+            />
+
+            <small *ngIf="parentForm['email'].invalid && isSubmitted"
+              ><span *ngIf="parentForm['email'].errors?.['required']"
+                >*Email is required</span
+              >
+              <span *ngIf="parentForm['email'].errors?.['email']"
+                >*Email is invalid</span
+              ></small
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Address</label
+            >
+            <input
+              formControlName="address"
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+            />
+            <small *ngIf="parentForm['address'].invalid && isSubmitted"
+              >*Address is required</small
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Phone</label
+            >
+            <input
+              formControlName="phone"
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+            />
+            <small *ngIf="parentForm['phone'].invalid && isSubmitted"
+              >*Phone is required</small
+            >
+          </div>
+          <div class="mb-3">
+            <!-- <label for="exampleFormControlInput1" class="form-label">Child</label> -->
+            <!-- <input
+              formControlName="child"
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+            /> -->
+            <mat-label>Child</mat-label>
+            <mat-chip-list #chipList aria-label="Child selection">
+              <mat-chip
+                *ngFor="let child of children"
+                (removed)="remove(child)"
+              >
+                {{ child }}
+                <button matChipRemove>
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </mat-chip>
+              <input
+                #childInput
+                [formControl]="childCtrl"
+                [matAutocomplete]="auto"
+                [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                (matChipInputTokenEnd)="add($event)"
+              />
+            </mat-chip-list>
+            <mat-autocomplete
+              #auto="matAutocomplete"
+              (optionSelected)="selected($event)"
+            >
+              <mat-option
+                *ngFor="let child of filteredChildren | async"
+                [value]="child"
+              >
+                {{ child }}
+              </mat-option>
+            </mat-autocomplete>
+
+            <!-- <small *ngIf="&& isSubmitted">*Child is required</small> -->
+          </div>
+
+          <div>
+            <img [src]="imageDisplay" alt="" />
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label"
+              >Upload Student Photo</label
+            >
+            <input
+              class="form-control"
+              type="file"
+              id="formFile"
+              accept="image/*"
+              (change)="uploadImage($event)"
+            />
+            <small *ngIf="parentForm['image'].invalid && isSubmitted"
+              >*Image is required</small
+            >
+          </div>
+          <button class="save" (click)="submitData()"><p>Save</p></button>
+        </form>
+      </div>
+    </div>

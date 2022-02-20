@@ -1,0 +1,110 @@
+<div class="container">
+  <h3>Add Subject</h3>
+  <form [formGroup]="form!">
+    <div class="row">
+      <div class="col-25">
+        <label for="subject_name">Subject Name</label>
+      </div>
+      <div class="col-75">
+        <input
+          formControlName="subject_name"
+          type="text"
+          id="subject_name"
+          name="subject_name"
+          placeholder="Subject name.."
+        />
+      </div>
+
+      <small *ngIf="subjectForm['subject_name'].invalid && isSubmitted"
+        >*Subject Name is required</small
+      >
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="duration">Duration</label>
+      </div>
+      <div class="col-75">
+        <input
+          formControlName="duration"
+          type="text"
+          id="duration"
+          name="duration"
+          placeholder="Duration time in minute.."
+        />
+      </div>
+      <small *ngIf="subjectForm['duration'].invalid && isSubmitted"
+        >*Duration is required</small
+      >
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="link">Link</label>
+      </div>
+      <div class="col-75">
+        <input
+          formControlName="link"
+          type="text"
+          id="link"
+          name="link"
+          placeholder="Link to the classroom.."
+        />
+      </div>
+      <small *ngIf="subjectForm['link'].invalid && isSubmitted"
+        >*Link is required</small
+      >
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Teacher</label>
+      </div>
+      <div class="col-75">
+        <select
+          id="country"
+          name="country"
+          formControlName="teacher_id"
+          [(ngModel)]="selectedTeacher"
+        >
+          <option value="{{ teacher._id }}" *ngFor="let teacher of teacherData">
+            {{ teacher.first_name }} {{ teacher.last_name }}
+          </option>
+        </select>
+      </div>
+      <small *ngIf="subjectForm['teacher_id'].invalid && isSubmitted"
+        >*Teacher is required</small
+      >
+    </div>
+    <br />
+    <div class="row">
+      <button class="submit" mat-raised-button (click)="submitData()">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+
+<br /><br />
+
+<table id="subjects">
+  <tr>
+    <th>Subject</th>
+    <th>Teacher</th>
+    <th>Phone</th>
+    <th>Duration</th>
+    <th>Link</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let data of subject">
+    <td>{{ data.subject_name }}</td>
+    <td>{{ data.teacher_id?.first_name }} {{ data.teacher_id?.last_name }}</td>
+    <td>{{ data.teacher_id?.phone }}</td>
+    <td>{{ data.duration }} menit</td>
+    <td>{{ data.link }}</td>
+    <td>
+      <div class="box-button">
+        <button class="delete" (click)="deleteSubject(data._id)">Delete</button>
+        <button class="edit" routerLink="/subject/{{ data._id }}">Edit</button>
+      </div>
+    </td>
+  </tr>
+</table>

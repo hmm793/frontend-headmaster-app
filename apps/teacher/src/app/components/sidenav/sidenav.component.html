@@ -1,0 +1,49 @@
+<mat-sidenav-container class="d-md-block side-navbar">
+  <mat-sidenav [(opened)]="opened" #sidenav mode="side">
+    <div class="logo">
+      <img src="/assets/images/logo.png" alt="" />
+    </div>
+    <div class="links">
+      <ul>
+        <li>
+          <a routerLink="./dashboard"
+            ><mat-icon aria-hidden="false">home</mat-icon>Dashboard</a
+          >
+        </li>
+        <li>
+          <a routerLink="./detail-profil"><mat-icon>person</mat-icon>Profil</a>
+        </li>
+        <li>
+          <a routerLink="./home-room-panel"
+            ><mat-icon aria-hidden="false">logout</mat-icon>Home Room Panel</a
+          >
+        </li>
+        <li (click)="showProfile3 = !showProfile3">
+          <a><mat-icon aria-hidden="false">edit</mat-icon>Set Score </a>
+        </li>
+        <div *ngIf="showProfile3">
+          <li
+            *ngFor="let subject of subject"
+            style="margin-left: 40px; width: 72.5%"
+          >
+            <a (click)="goToLink(subject._id)">{{ subject.subject_name }}</a>
+          </li>
+        </div>
+        <li>
+          <a (click)="logoutUser()"
+            ><mat-icon aria-hidden="false">logout</mat-icon>Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <div class="menu">
+        <i class="fa fa-bars" aria-hidden="true" (click)="sidenav.toggle()"></i>
+      </div>
+      <div class="col-12 text-center">Teacher Dashboard</div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="title-score">
+    <p>Grade Student</p>
+  </div>
+  <div class="wrapper">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Subject</th>
+          <th scope="col">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of grades; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ data['Subject Name'] }}</td>
+          <td>{{ data.score }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,146 @@
+<!-- <mat-tab-group #tabRef (selectedTabChange)="logChange(tabRef.selectedIndex)">
+  <mat-tab label="Add Event" style="width: 100%; height: 100%"> </mat-tab>
+  <mat-tab label="Add Class">Add Class</mat-tab>
+</mat-tab-group> -->
+
+<mat-tab-group dynamicHeight>
+  <mat-tab label="Add Event">
+    <div class="example-large-box mat-elevation-z4">
+      <mat-dialog-content [formGroup]="form">
+        <div class="calendar-demo-event-form">
+          <!-- Title -->
+          <mat-form-field>
+            <input matInput placeholder="Title" formControlName="title" />
+          </mat-form-field>
+
+          <!-- Type -->
+          <mat-form-field>
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="allDay" [(value)]="selectedValue">
+              <mat-option value="true">All Day</mat-option>
+              <mat-option value="false">Not All Day</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- AllDay -->
+          <div *ngIf="selectedValue === 'true' ? true : false">
+            <mat-form-field>
+              <mat-label>Choose a start date</mat-label>
+              <input matInput type="date" formControlName="start2" />
+            </mat-form-field>
+          </div>
+
+          <!-- NoT All Day -->
+          <div *ngIf="selectedValue === 'false' ? true : false">
+            <mat-form-field>
+              <mat-label>Choose a start date</mat-label>
+              <input matInput type="datetime-local" formControlName="start" />
+            </mat-form-field>
+            <br />
+            <mat-form-field>
+              <mat-label>Choose a end date</mat-label>
+              <input matInput type="datetime-local" formControlName="end" />
+            </mat-form-field>
+          </div>
+
+          <!-- Color -->
+          <mat-form-field>
+            <mat-label>Choose color</mat-label>
+            <input matInput type="color" formControlName="color" />
+          </mat-form-field>
+        </div>
+      </mat-dialog-content>
+
+      <mat-dialog-actions align="end">
+        <button mat-raised-button (click)="close()">Close</button>
+        <button mat-raised-button color="primary" (click)="save()">Save</button>
+      </mat-dialog-actions>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Add Schedule">
+    <div class="example-large-box mat-elevation-z4">
+      <mat-dialog-content [formGroup]="form!">
+        <div class="calendar-demo-event-form">
+          <!-- Title -->
+          <mat-form-field>
+            <mat-label>Mata Pelajaran</mat-label>
+            <mat-select formControlName="title" [(value)]="subjectValue">
+              <mat-option
+                value="{{ sub.subject_name }}"
+                *ngFor="let sub of subject"
+                (click)="_durationOto(subjectValue)"
+                (click)="_relatedClass(subjectValue)"
+                >{{ sub.subject_name }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+
+          <!-- Kelas -->
+          <mat-form-field>
+            <mat-label>Class</mat-label>
+            <input matInput disabled value="{{ kelasValue }}" />
+            <!-- <mat-select formControlName="kelas" [(value)]="kelasValue">
+                <mat-option value="{{ kel._id }}" *ngFor="let kel of kelas">{{
+                  kel.class_name
+                }}</mat-option>
+              </mat-select> -->
+            <!-- <mat-select formControlName="kelas" [(value)]="kelasValue">
+                <mat-option value="{{ kel._id }}" *ngFor="let kel of kelas">{{
+                  kel.class_name
+                }}</mat-option>
+              </mat-select> -->
+          </mat-form-field>
+
+          <!-- daysOfWeek -->
+          <mat-form-field>
+            <mat-label>Hari</mat-label>
+            <mat-select formControlName="daysOfWeek" [(value)]="dayValueNumber">
+              <mat-option
+                value="{{ day.value }}"
+                *ngFor="let day of dayValue"
+                >{{ day.day }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+
+          <!-- startTime -->
+          <mat-form-field>
+            <mat-label>Choose a start time</mat-label>
+            <input
+              matInput
+              #val
+              type="time"
+              formControlName="startTime"
+              (change)="_calcEndTime(val.value, duration)"
+            />
+          </mat-form-field>
+          {{ startTimeValue }}
+          <!-- EndTime -->
+          <mat-form-field>
+            <mat-label>Choose a end time</mat-label>
+            <input
+              [disabled]="true"
+              matInput
+              type="time"
+              value="{{ endTimeValue }}"
+            />
+          </mat-form-field>
+
+          <!-- Color -->
+          <mat-form-field>
+            <mat-label>Choose color</mat-label>
+            <input matInput type="color" formControlName="color" />
+          </mat-form-field>
+        </div>
+      </mat-dialog-content>
+
+      <mat-dialog-actions align="end">
+        <button mat-raised-button (click)="close()">Close</button>
+        <button mat-raised-button color="primary" (click)="save2()">
+          Save
+        </button>
+      </mat-dialog-actions>
+    </div>
+  </mat-tab>
+</mat-tab-group>

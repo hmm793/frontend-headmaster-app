@@ -1,0 +1,60 @@
+/*  */
+.box-name {
+  display: flex;
+  margin-right: 35px;
+}
+
+.box-detail {
+  width: max-content;
+  margin: 10px auto;
+  display: flex;
+  background: #ffff;
+  border-radius: 10px;
+  box-shadow: 4px 4px #bebebe;
+}
+.profil {
+  align-items: center;
+}
+.name-profil {
+  height: max-content;
+  text-align: center;
+  width: 100%;
+  font-size: 35px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  margin-top: 95px;
+  margin-bottom: 100px;
+}
+.photo img {
+  max-width: 235px;
+  height: 100%;
+}
+.name1 {
+  width: 155px;
+  margin: 10px 0;
+  color: #313131;
+  letter-spacing: 1px;
+}
+.photo {
+  margin: 35px;
+}
+.edit {
+  float: right;
+  margin: 20px;
+}
+img.photo-profil {
+  clip-path: circle();
+}
+.title {
+  text-align: center;
+  font-size: 40px;
+  margin: 38px;
+  color: #ffffffa3;
+}
+
+.bio {
+  padding-bottom: 60px;
+}
+.name2 {
+  padding: 10px 0;
+}

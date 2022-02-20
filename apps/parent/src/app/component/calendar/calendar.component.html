@@ -1,0 +1,8 @@
+<full-calendar
+  id="schedule"
+  *ngIf="calendarVisible"
+  [options]="calendarOptions"
+></full-calendar>
+<button mat-raised-button color="primary" (click)="convertToPDF()">
+  convertToPDF
+</button>

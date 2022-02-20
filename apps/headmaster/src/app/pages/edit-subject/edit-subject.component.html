@@ -1,0 +1,61 @@
+<div class="title-edit">
+  <p>Edit Profil</p>
+</div>
+<div class="container">
+  <div class="detail-profil">
+    <div class="bio">
+      <form [formGroup]="form">
+        <label for="validationCustom01" class="form-label">Subject name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          formControlName="subject_name"
+          name="subject_name"
+        />
+        <small *ngIf="subjectForm['subject_name'].invalid && isSubmitted"
+          >*Subject Name is required</small
+        >
+        <label for="validationCustom01" class="form-label">Teacher</label>
+
+        <select
+          id="country"
+          name="country"
+          formControlName="teacher_id"
+          [(ngModel)]="selectedTeacher"
+        >
+          <option value="{{ teacher._id }}" *ngFor="let teacher of teacherData">
+            {{ teacher.first_name }} {{ teacher.last_name }}
+          </option>
+        </select>
+        <small *ngIf="subjectForm['teacher_id'].invalid && isSubmitted"
+          >*Teacher is required</small
+        >
+        <label for="validationCustom01" class="form-label">Duration</label>
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          formControlName="duration"
+          name="duration"
+        />
+        <small *ngIf="subjectForm['duration'].invalid && isSubmitted"
+          >*Duration is required</small
+        >
+        <label for="validationCustom01" class="form-label">Link</label>
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          formControlName="link"
+          name="link"
+        />
+        <small *ngIf="subjectForm['link'].invalid && isSubmitted"
+          >*Link is required</small
+        >
+      </form>
+      <br />
+      <input type="submit" (click)="editSubject()" value="Edit Subject" />
+    </div>
+  </div>
+</div>

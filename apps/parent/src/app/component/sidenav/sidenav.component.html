@@ -1,0 +1,68 @@
+<mat-sidenav-container class="d-md-block side-navbar">
+  <mat-sidenav [(opened)]="opened" #sidenav mode="side">
+    <div class="logo">
+      <img src="/assets/images/logo.png" alt="" />
+    </div>
+    <div class="links">
+      <ul>
+        <li>
+          <a routerLink="./dashboard"
+            ><mat-icon aria-hidden="false">home</mat-icon>Dashboard</a
+          >
+        </li>
+        <li>
+          <a routerLink="./detail-profile"><mat-icon>person</mat-icon>Profil</a>
+        </li>
+        <li *ngIf="showInfo" style="margin-left: 20px; width: 86.5%">
+          <a routerLink="./class-info"
+            ><mat-icon aria-hidden="false">class</mat-icon>Class
+          </a>
+        </li>
+
+        <li *ngIf="showInfo" style="margin-left: 20px; width: 86.5%">
+          <a routerLink="./grade-info"
+            ><mat-icon aria-hidden="false">grading</mat-icon>Grade
+          </a>
+        </li>
+
+        <li (click)="showProfile2 = !showProfile2">
+          <a><mat-icon aria-hidden="false">info</mat-icon>Score Info </a>
+        </li>
+        <div *ngIf="showProfile2">
+          <li
+            *ngFor="let child of parentData.child"
+            style="margin-left: 20px; width: 86.35%"
+          >
+            <a routerLink="./score-info/{{ child._id }}"
+              ><mat-icon aria-hidden="false">person</mat-icon
+              >{{ child.first_name }}
+            </a>
+          </li>
+        </div>
+
+        <li>
+          <a (click)="logoutUser()"
+            ><mat-icon aria-hidden="false">logout</mat-icon>Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="bg-image"></div>
+    <div class="content-page">
+      <mat-toolbar>
+        <div class="menu">
+          <i
+            class="fa fa-bars"
+            aria-hidden="true"
+            (click)="sidenav.toggle()"
+          ></i>
+        </div>
+      </mat-toolbar>
+      <div class="router-page">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

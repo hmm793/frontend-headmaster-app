@@ -1,0 +1,53 @@
+<div class="teacher-sidebar">
+  <div class="logo">
+    <img src="/assets/images/logo.png" alt="" />
+  </div>
+  <div class="links">
+    <ul>
+      <li>
+        <a routerLink="/dashboard"
+          ><mat-icon aria-hidden="false">home</mat-icon>Dashboard</a
+        >
+      </li>
+
+      <li>
+        <a (click)="showProfile = !showProfile"
+          ><mat-icon aria-hidden="false">person</mat-icon>Profile</a
+        >
+      </li>
+
+      <li *ngIf="showProfile" style="margin-left: 20px; width: 86.5%">
+        <a routerLink="/detail-profile"
+          ><mat-icon aria-hidden="false">info</mat-icon>Detail Profile</a
+        >
+      </li>
+
+      <li *ngIf="showProfile" style="margin-left: 20px; width: 86.5%">
+        <a routerLink="/edit-profile"
+          ><mat-icon aria-hidden="false">edit</mat-icon>Edit Profile</a
+        >
+      </li>
+      <li>
+        <a (click)="showInfo = !showInfo"
+          ><mat-icon aria-hidden="false">info</mat-icon>Info</a
+        >
+      </li>
+
+      <li *ngIf="showInfo" style="margin-left: 20px; width: 86.5%">
+        <a routerLink="/class-info"
+          ><mat-icon aria-hidden="false">class</mat-icon>Class
+        </a>
+      </li>
+
+      <li *ngIf="showInfo" style="margin-left: 20px; width: 86.5%">
+        <a routerLink="/grade-info"
+          ><mat-icon aria-hidden="false">grading</mat-icon>Grade
+        </a>
+      </li>
+
+      <li>
+        <a href=""><mat-icon aria-hidden="false">logout</mat-icon>Logout</a>
+      </li>
+    </ul>
+  </div>
+</div>

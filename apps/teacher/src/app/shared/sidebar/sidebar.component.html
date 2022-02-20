@@ -1,0 +1,54 @@
+<div class="teacher-sidebar">
+  <div class="logo">
+    <img src="/assets/images/logo.png" alt="" />
+  </div>
+  <div class="links">
+    <ul>
+      <li>
+        <a routerLink="/dashboard"
+          ><mat-icon aria-hidden="false">home</mat-icon>Dashboard</a
+        >
+      </li>
+
+      <li>
+        <a (click)="showProfile = !showProfile"
+          ><mat-icon aria-hidden="false">person</mat-icon>Profile</a
+        >
+      </li>
+
+      <li *ngIf="showProfile" style="margin-left: 20px; width: 86.5%">
+        <a routerLink="/detail-profil"
+          ><mat-icon aria-hidden="false">info</mat-icon>Detail Profile</a
+        >
+      </li>
+
+      <li *ngIf="showProfile" style="margin-left: 20px; width: 86.5%">
+        <a routerLink="/edit-profil"
+          ><mat-icon aria-hidden="false">edit</mat-icon>Edit Profile</a
+        >
+      </li>
+
+      <li (click)="showProfile3 = !showProfile3">
+        <a><mat-icon aria-hidden="false">edit</mat-icon>Set Score </a>
+      </li>
+      <div *ngIf="showProfile3">
+        <li
+          *ngFor="let subject of subject"
+          style="margin-left: 40px; width: 72.5%"
+        >
+          <a (click)="goToLink(subject._id)">{{ subject.subject_name }}</a>
+        </li>
+      </div>
+
+      <li>
+        <a routerLink="/home-room-panel"
+          ><mat-icon aria-hidden="false">person</mat-icon>Home Room Panel</a
+        >
+      </li>
+
+      <li>
+        <a href=""><mat-icon aria-hidden="false">logout</mat-icon>Logout</a>
+      </li>
+    </ul>
+  </div>
+</div>

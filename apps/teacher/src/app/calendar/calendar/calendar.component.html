@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="wrapper">
+    <full-calendar
+      id="schedule"
+      *ngIf="calendarVisible"
+      [options]="calendarOptions"
+    ></full-calendar>
+    <div class="convert-button">
+      <button mat-raised-button color="primary" (click)="convertToPDF()">
+        convertToPDF
+      </button>
+    </div>
+  </div>
+</div>

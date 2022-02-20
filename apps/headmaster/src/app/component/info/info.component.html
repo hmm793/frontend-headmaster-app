@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Info</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>Title : {{ info.title }}</h3>
+  <h3 *ngIf="info.startTime">Start Time : {{ info.startTime }}</h3>
+  <h3 *ngIf="info.endTime">End Time : {{ info.endTime }}</h3>
+  <h3 *ngIf="info.start ? true : false">
+    Start : {{ info.start | date: 'fullDate' }}
+    {{ info.start | date: 'shortTime' }}
+  </h3>
+  <h3 *ngIf="info.end ? true : false">
+    End : {{ info.end | date: 'fullDate' }}
+    {{ info.end | date: 'shortTime' }}
+  </h3>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close (click)="deleteEvent()">Delete</button>
+  <button mat-button mat-dialog-close (click)="close()">Close</button>
+</mat-dialog-actions>

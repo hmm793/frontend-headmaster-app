@@ -1,0 +1,59 @@
+<mat-sidenav-container class="d-md-block side-navbar">
+  <mat-sidenav [(opened)]="opened" #sidenav mode="side">
+    <div class="logo">
+      <img src="/assets/images/logo.png" alt="" />
+    </div>
+    <div class="links">
+      <ul>
+        <li>
+          <a routerLink="./dashboard"
+            ><mat-icon aria-hidden="false">home</mat-icon>Dashboard</a
+          >
+        </li>
+        <li>
+          <a routerLink="./detail-profile"><mat-icon>person</mat-icon>Profil</a>
+        </li>
+        <li>
+          <a (click)="showInfo = !showInfo"
+            ><mat-icon aria-hidden="false">info</mat-icon>Info</a
+          >
+        </li>
+
+        <li *ngIf="showInfo" style="margin-left: 20px; width: 86.5%">
+          <a routerLink="./class-info"
+            ><mat-icon aria-hidden="false">class</mat-icon>Class
+          </a>
+        </li>
+
+        <li *ngIf="showInfo" style="margin-left: 20px; width: 86.5%">
+          <a routerLink="./grade-info"
+            ><mat-icon aria-hidden="false">grading</mat-icon>Grade
+          </a>
+        </li>
+
+        <li>
+          <a (click)="logoutUser()"
+            ><mat-icon aria-hidden="false">logout</mat-icon>Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="bg-image"></div>
+    <div class="content-page">
+      <mat-toolbar>
+        <div class="menu">
+          <i
+            class="fa fa-bars"
+            aria-hidden="true"
+            (click)="sidenav.toggle()"
+          ></i>
+        </div>
+      </mat-toolbar>
+      <div class="router-page">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

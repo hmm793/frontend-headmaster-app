@@ -1,0 +1,122 @@
+<!-- <mat-tab-group>
+  <mat-tab label="All Parents ">
+    <div class="title">
+      <div class="head"><p>All Parents</p></div>
+    </div>
+    <div class="route">
+      <p>Home <span> > All Parents</span></p>
+    </div>
+    <div class="container-table">
+      <table>
+        <tr class="header">
+          <th>
+            <p>Id</p>
+          </th>
+          <th>
+            <p>Photo</p>
+          </th>
+          <th>
+            <p>Name</p>
+          </th>
+          <th>
+            <p>Gender</p>
+          </th>
+          <th>
+            <p>Occouption</p>
+          </th>
+          <th>
+            <p>Address</p>
+          </th>
+          <th>
+            <p>Phone</p>
+          </th>
+          <th>
+            <p>E mail</p>
+          </th>
+        </tr>
+        <tr *ngFor="let data of parents">
+          <td>
+            <p>{{ data._id }}</p>
+          </td>
+          <td>
+            <div class="profil">
+              <img src="{{ data.image }}" alt="" style="width: 100px" />
+            </div>
+          </td>
+          <td>
+            <p>{{ data.first_name }} {{ data.last_name }}</p>
+          </td>
+          <td>
+            <p>{{ data.gender }}</p>
+          </td>
+          <td>
+            <p>{{ data.occupation }}</p>
+          </td>
+          <td>
+            <p>{{ data.address }}</p>
+          </td>
+          <td>
+            <p>{{ data.phone }}</p>
+          </td>
+          <td>
+            <p>{{ data.email }}</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </mat-tab>
+</mat-tab-group> -->
+
+<table id="parents">
+  <tr>
+    
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Occouption</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let data of parents" class="content-list">
+    <td>
+      <p>{{ data?.first_name }} {{ data?.last_name }}</p>
+    </td>
+    <td>
+      <p>{{ data?.gender }}</p>
+    </td>
+    <td>
+      <p>{{ data?.occupation }}</p>
+    </td>
+
+    <td>
+      <p>{{ data?.address }}</p>
+    </td>
+    <td>
+      <p>{{ data?.phone }}</p>
+    </td>
+    <td>
+      <p>{{ data?.email }}</p>
+    </td>
+    <td style="width: 100px">
+      <button
+      class="detail"
+        mat-flat-button
+        color="primary"
+        routerLink="/parentdetails/{{ data?._id }}"
+      >
+        Detail
+      </button>
+      <br />
+      <br />
+      <button
+      class="edit"
+        mat-flat-button
+        color="primary"
+        routerLink="/parentedit/{{ data?._id }}"
+      >
+        Edit
+      </button>
+    </td>
+  </tr>
+</table>

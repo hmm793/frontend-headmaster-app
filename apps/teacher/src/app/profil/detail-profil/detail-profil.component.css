@@ -1,0 +1,99 @@
+/* 
+.box-name {
+  display: flex;
+  margin-right: 35px;
+}
+
+.box-detail {
+  width: max-content;
+  margin: 10px auto;
+  display: flex;
+  background: #ffff;
+  border-radius: 10px;
+  box-shadow: 4px 4px #bebebe;
+}
+.profil {
+  align-items: center;
+}
+.name-profil {
+  height: max-content;
+  text-align: center;
+  width: 100%;
+  font-size: 35px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  margin-top: 95px;
+  margin-bottom: 100px;
+}
+.photo img {
+  max-width: 235px;
+   height: 100%;
+ }
+.name1 {
+  width: 155px;
+  margin: 10px 0;
+  color: #313131;
+  letter-spacing: 1px;
+}
+.photo {
+  margin: 35px;
+}.edit {
+  float: right;
+  margin: 20px;
+}
+.bio {
+  padding-bottom: 150px;
+}
+img.photo-profil {
+  clip-path: circle();
+}
+.title-profil{
+  text-align: center;
+  font-size: 40px;
+  margin: 30px 0;
+  font-weight: 300;
+  letter-spacing: 6px;
+  font-family: sans-serif;
+  color: #666666;
+}
+
+.myTable{
+  padding-left: 50px;
+} */
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  color: #000;
+}
+
+.student-profile .card {
+  border-radius: 10px;
+}
+
+.student-profile .card .card-header .profile_img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px auto;
+  border: 10px solid #ccc;
+  border-radius: 50%;
+}
+
+.student-profile .card h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.student-profile .card p {
+  font-size: 16px;
+  color: #000;
+}
+
+.student-profile .table th,
+.student-profile .table td {
+  font-size: 14px;
+  padding: 5px 10px;
+  color: #000;
+}

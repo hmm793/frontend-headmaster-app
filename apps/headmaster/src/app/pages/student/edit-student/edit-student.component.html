@@ -1,0 +1,505 @@
+<section class="statis mt-4 text-center">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-12 mb-4 mb-lg-0">
+      <div class="box bg-cards p-auto">
+        <i class="uil-eye"></i>
+        <h3 class="text-cards">Add New Student</h3>
+        <div class="row m-5">
+          <div class="col-6">
+            <div class="photo">
+              <div class="container-profil">
+                <img
+                  [src]="imageDisplay ? imageDisplay : imageStudent"
+                  alt=""
+                  style="width: 200px"
+                  class="photo-profil"
+                />
+              </div>
+        
+              <form [formGroup]="formImage">
+                <input
+                  accept="image/*"
+                  (change)="editImage($event)"
+                  class="form-control"
+                  type="file"
+                  id="formFile"
+                />
+              </form>
+              <div class="save-image">
+                <input type="submit" (click)="submitImage()" value="Save" />
+              </div>
+            </div>
+          </div>
+              
+              <div class="col-6 text-cards">
+                <form [formGroup]="form">
+                  <label for="year_academic">Year Academic</label>
+                  <input
+                    formControlName="year_academic"
+                    type="text"
+                    id="year_academic"
+                    name="year_academic"
+                  />
+          
+                  <small *ngIf="studentForm['year_academic'].invalid && isSubmitted"
+                    >*Year Academic is required</small
+                  >
+          
+                  <label for="validationCustom01" class="form-label">First name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="validationCustom01"
+                    value="Mark"
+                    required
+                    formControlName="first_name"
+                    name="first_name"
+                  />
+                  <small *ngIf="studentForm['first_name'].invalid && isSubmitted"
+                    >*First Name is required</small
+                  >
+          
+                  <label for="validationCustom01" class="form-label">Last name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="validationCustom01"
+                    value="Mark"
+                    required
+                    formControlName="last_name"
+                    name="last_name"
+                  />
+                  <small *ngIf="studentForm['last_name'].invalid && isSubmitted"
+                    >*Last Name is required</small
+                  >
+          
+                  <label for="validationCustom01" class="form-label">Gender</label>
+                  <!-- <input
+                    type="text"
+                    class="form-control"
+                    id="validationCustom01"
+                    value="Mark"
+                    required
+                    formControlName="gender"
+                    name="gender"
+                  /> -->
+                  <select formControlName="gender" [(ngModel)]="selectedGender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                  <small *ngIf="studentForm['gender'].invalid && isSubmitted"
+                    >*Gender is required</small
+                  >
+          
+                  <label for="validationCustom01" class="form-label">Father Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="validationCustom01"
+                    value="Mark"
+                    required
+                    formControlName="father_name"
+                    name="father_name"
+                  />
+                  <small *ngIf="studentForm['father_name'].invalid && isSubmitted"
+                    >*Father Name is required</small
+                  >
+                  <label for="mother_name">Mother Name</label>
+                  <input
+                    formControlName="mother_name"
+                    type="text"
+                    id="mother_name"
+                    name="mother_name"
+                  />
+                  <small *ngIf="studentForm['mother_name'].invalid && isSubmitted"
+                    >*Mother Name is required</small
+                  >
+          
+                  <label for="date_of_birth">Date of Birth</label>
+                  <br />
+                  <input
+                    formControlName="date_of_birth"
+                    type="date"
+                    id="date_of_birth"
+                    name="date_of_birth"
+                  />
+          
+                  <small *ngIf="studentForm['date_of_birth'].invalid && isSubmitted"
+                    >*Date of birth is required</small
+                  >
+                  <br />
+                  <label for="father_occupation">Father Occupation</label>
+                  <input
+                    formControlName="father_occupation"
+                    type="text"
+                    id="father_occupation"
+                    name="father_occupation"
+                  />
+                  <small *ngIf="studentForm['father_occupation'].invalid && isSubmitted"
+                    >*Father Occupation is required</small
+                  >
+          
+                  <label for="blood_group">Blood Group</label>
+          
+                  <select formControlName="blood_group" [(ngModel)]="selectedBloodGroup">
+                    <option value="A-">A-</option>
+                    <option value="A+">A+</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB-">AB-</option>
+                    <option value="AB+">AB+</option>
+                  </select>
+          
+                  <small *ngIf="studentForm['blood_group'].invalid && isSubmitted"
+                    >*Blood Group is required</small
+                  >
+                  <label for="religion">Religion</label>
+                  <select formControlName="religion" [(ngModel)]="selectedReligion">
+                    <option value="Islam">Islam</option>
+                    <option value="Hindu">Hindu</option>
+                    <option value="Buddish">Buddhist</option>
+                    <option value="Christian">Christian</option>
+                    <option value="Others">Others</option>
+                  </select>
+          
+                  <small *ngIf="studentForm['religion'].invalid && isSubmitted"
+                    >*Religion is required</small
+                  >
+          
+                  <label for="email">Email</label>
+                  <input formControlName="email" type="text" id="email" name="email" />
+          
+                  <small
+                    *ngIf="studentForm['email'].invalid && isSubmitted"
+                    class="p-error"
+                    ><span *ngIf="studentForm['email'].errors?.['required']"
+                      >*Email is required</span
+                    >
+                    <span *ngIf="studentForm['email'].errors?.['email']"
+                      >*Email is invalid</span
+                    ></small
+                  >
+          
+                  <label for="addmission_date">Addmission Date</label>
+                  <br />
+                  <input
+                    formControlName="addmission_date"
+                    type="date"
+                    id="addmission_date"
+                    name="addmission_date"
+                  />
+                  <br />
+                  <small *ngIf="studentForm['addmission_date'].invalid && isSubmitted"
+                    >*Addmission Date is required</small
+                  >
+          
+                  <label for="kelas">Kelas </label>
+                  <!-- <span> {{ currentClass }}</span> -->
+                  <!-- <input formControlName="kelas" type="text" id="kelas" name="kelas" /> -->
+                  <select formControlName="kelas" [(ngModel)]="selectedClass">
+                    <option value="{{ kel.class_name }}" *ngFor="let kel of classData">
+                      {{ kel.class_name }}
+                    </option>
+                  </select>
+                  <small *ngIf="studentForm['kelas'].invalid && isSubmitted"
+                    >*Kelas is required</small
+                  >
+          
+                  <label for="address">Address</label>
+                  <input
+                    formControlName="address"
+                    type="text"
+                    id="address"
+                    name="address"
+                  />
+          
+                  <small *ngIf="studentForm['address'].invalid && isSubmitted"
+                    >*Address is required</small
+                  >
+          
+                  <label for="phone">Phone</label>
+                  <input formControlName="phone" type="text" id="phone" name="phone" />
+          
+                  <small *ngIf="studentForm['phone'].invalid && isSubmitted"
+                    >*Phone is required</small
+                  >
+          
+                  <label for="status_siswa">Status Siswa</label>
+                  <!-- <input
+                    formControlName="status_siswa"
+                    type="text"
+                    id="status_siswa"
+                    name="status_siswa"
+                  /> -->
+                  <select formControlName="status_siswa" [(ngModel)]="selectedStatus">
+                    <option value="active">Active</option>
+                    <option value="non-active">Non-active</option>
+                  </select>
+                  <small *ngIf="studentForm['status_siswa'].invalid && isSubmitted"
+                    >*Status Siswa is required</small
+                  >
+          
+                  <label for="short_bio">Short Bio</label>
+                  <input
+                    formControlName="short_bio"
+                    type="text"
+                    id="short_bio"
+                    name="short_bio"
+                  />
+          
+                  <small *ngIf="studentForm['short_bio'].invalid && isSubmitted"
+                    >*Short Bio is required</small
+                  >
+                </form>
+                <br />
+                
+              </div>
+              <div class="col-12">
+                <input type="submit" (click)="editSiswa()" value="Edit Student Data" />
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <div class="title-edit">
+  <p>Edit Profil</p>
+</div>
+<div class="container">
+  <div class="detail-profil">
+    <div class="photo">
+      <div class="container-profil">
+        <img
+          [src]="imageDisplay ? imageDisplay : imageStudent"
+          alt=""
+          style="width: 200px"
+          class="photo-profil"
+        />
+      </div>
+
+      <form [formGroup]="formImage">
+        <input
+          accept="image/*"
+          (change)="editImage($event)"
+          class="form-control"
+          type="file"
+          id="formFile"
+        />
+      </form>
+      <div class="save-image">
+        <input type="submit" (click)="submitImage()" value="Save" />
+      </div>
+    </div>
+    <div class="bio">
+      <form [formGroup]="form">
+        <label for="year_academic">Year Academic</label>
+        <input
+          formControlName="year_academic"
+          type="text"
+          id="year_academic"
+          name="year_academic"
+        />
+
+        <small *ngIf="studentForm['year_academic'].invalid && isSubmitted"
+          >*Year Academic is required</small
+        >
+
+        <label for="validationCustom01" class="form-label">First name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          value="Mark"
+          required
+          formControlName="first_name"
+          name="first_name"
+        />
+        <small *ngIf="studentForm['first_name'].invalid && isSubmitted"
+          >*First Name is required</small
+        >
+
+        <label for="validationCustom01" class="form-label">Last name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          value="Mark"
+          required
+          formControlName="last_name"
+          name="last_name"
+        />
+        <small *ngIf="studentForm['last_name'].invalid && isSubmitted"
+          >*Last Name is required</small
+        >
+
+        <label for="validationCustom01" class="form-label">Gender</label>
+        <select formControlName="gender" [(ngModel)]="selectedGender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <small *ngIf="studentForm['gender'].invalid && isSubmitted"
+          >*Gender is required</small
+        >
+
+        <label for="validationCustom01" class="form-label">Father Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          value="Mark"
+          required
+          formControlName="father_name"
+          name="father_name"
+        />
+        <small *ngIf="studentForm['father_name'].invalid && isSubmitted"
+          >*Father Name is required</small
+        >
+        <label for="mother_name">Mother Name</label>
+        <input
+          formControlName="mother_name"
+          type="text"
+          id="mother_name"
+          name="mother_name"
+        />
+        <small *ngIf="studentForm['mother_name'].invalid && isSubmitted"
+          >*Mother Name is required</small
+        >
+
+        <label for="date_of_birth">Date of Birth</label>
+        <br />
+        <input
+          formControlName="date_of_birth"
+          type="date"
+          id="date_of_birth"
+          name="date_of_birth"
+        />
+
+        <small *ngIf="studentForm['date_of_birth'].invalid && isSubmitted"
+          >*Date of birth is required</small
+        >
+        <br />
+        <label for="father_occupation">Father Occupation</label>
+        <input
+          formControlName="father_occupation"
+          type="text"
+          id="father_occupation"
+          name="father_occupation"
+        />
+        <small *ngIf="studentForm['father_occupation'].invalid && isSubmitted"
+          >*Father Occupation is required</small
+        >
+
+        <label for="blood_group">Blood Group</label>
+
+        <select formControlName="blood_group" [(ngModel)]="selectedBloodGroup">
+          <option value="A-">A-</option>
+          <option value="A+">A+</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="AB-">AB-</option>
+          <option value="AB+">AB+</option>
+        </select>
+
+        <small *ngIf="studentForm['blood_group'].invalid && isSubmitted"
+          >*Blood Group is required</small
+        >
+        <label for="religion">Religion</label>
+        <select formControlName="religion" [(ngModel)]="selectedReligion">
+          <option value="Islam">Islam</option>
+          <option value="Hindu">Hindu</option>
+          <option value="Buddish">Buddhist</option>
+          <option value="Christian">Christian</option>
+          <option value="Others">Others</option>
+        </select>
+
+        <small *ngIf="studentForm['religion'].invalid && isSubmitted"
+          >*Religion is required</small
+        >
+
+        <label for="email">Email</label>
+        <input formControlName="email" type="text" id="email" name="email" />
+
+        <small
+          *ngIf="studentForm['email'].invalid && isSubmitted"
+          class="p-error"
+          ><span *ngIf="studentForm['email'].errors?.['required']"
+            >*Email is required</span
+          >
+          <span *ngIf="studentForm['email'].errors?.['email']"
+            >*Email is invalid</span
+          ></small
+        >
+
+        <label for="addmission_date">Addmission Date</label>
+        <br />
+        <input
+          formControlName="addmission_date"
+          type="date"
+          id="addmission_date"
+          name="addmission_date"
+        />
+        <br />
+        <small *ngIf="studentForm['addmission_date'].invalid && isSubmitted"
+          >*Addmission Date is required</small
+        >
+
+        <label for="kelas">Kelas </label>
+        <select formControlName="kelas" [(ngModel)]="selectedClass">
+          <option value="{{ kel.class_name }}" *ngFor="let kel of classData">
+            {{ kel.class_name }}
+          </option>
+        </select>
+        <small *ngIf="studentForm['kelas'].invalid && isSubmitted"
+          >*Kelas is required</small
+        >
+
+        <label for="address">Address</label>
+        <input
+          formControlName="address"
+          type="text"
+          id="address"
+          name="address"
+        />
+
+        <small *ngIf="studentForm['address'].invalid && isSubmitted"
+          >*Address is required</small
+        >
+
+        <label for="phone">Phone</label>
+        <input formControlName="phone" type="text" id="phone" name="phone" />
+
+        <small *ngIf="studentForm['phone'].invalid && isSubmitted"
+          >*Phone is required</small
+        >
+
+        <label for="status_siswa">Status Siswa</label>
+        <select formControlName="status_siswa" [(ngModel)]="selectedStatus">
+          <option value="active">Active</option>
+          <option value="non-active">Non-active</option>
+        </select>
+        <small *ngIf="studentForm['status_siswa'].invalid && isSubmitted"
+          >*Status Siswa is required</small
+        >
+
+        <label for="short_bio">Short Bio</label>
+        <input
+          formControlName="short_bio"
+          type="text"
+          id="short_bio"
+          name="short_bio"
+        />
+
+        <small *ngIf="studentForm['short_bio'].invalid && isSubmitted"
+          >*Short Bio is required</small
+        >
+      </form>
+      <br />
+      <input type="submit" (click)="editSiswa()" value="Edit Student Data" />
+    </div>
+  </div>
+</div> -->

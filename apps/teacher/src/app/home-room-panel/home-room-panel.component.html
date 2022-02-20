@@ -1,0 +1,25 @@
+<div class="title-head">
+  <p>Home Room Panel</p>
+</div>
+
+<div class="container">
+  <div class="wrapper">
+    <div class="title-room">
+      <p>You are a home room teacher for class {{ namaKelas }}</p>
+    </div>
+    <table class="table" id="customers">
+      <tr>
+        <th style="width: 250px;">ID Student</th>
+        <th style="width: 250px">Nama</th>
+        <th style="width: 100px">Kelas</th>
+        <th style="width: 50px;" *ngFor="let kel of subjectList">{{ kel }}</th>
+      </tr>
+      <tr *ngFor="let student of students">
+        <td >{{ student._id }}</td>
+        <td>{{ student.first_name }} {{ student.last_name }}</td>
+        <td>Kelas {{ student.kelas.class_name }}</td>
+        <td *ngFor="let score of student.subject">{{ score.score_subject }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

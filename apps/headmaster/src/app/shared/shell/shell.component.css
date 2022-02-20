@@ -1,0 +1,18 @@
+.student-wrapper {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+student-sidebar {
+  position: fixed;
+  width: 175px;
+  background-color: rgb(255, 173, 80);
+  height: 100%;
+  top: 0;
+}
+
+.student-main {
+  width: calc(100%-175px);
+  margin-left: 175px;
+}

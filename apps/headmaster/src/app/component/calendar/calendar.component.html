@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-6 col-lg-12 mb-4 mb-lg-0 my-2">
+    <div class="box bg-card p-3 mb-3 rounded-3">
+      <i class="uil-eye"></i>
+      <h3 class="text-cards text-center bg-text">Choose Class</h3>
+
+      <div class="d-flex justify-content-around my-3 bg-subcard rounded-3">
+        <div
+          class="form-check form-check-inline my-1"
+          *ngFor="let kel of allClass"
+        >
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="inlineCheckbox1"
+            value="option1"
+            (click)="scheduleFilter(kel._id)"
+          />
+          <label
+            class="form-check-label"
+            for="inlineCheckbox1"
+            class="bg-textcheck"
+            >Class {{ kel.class_name }}</label
+          >
+        </div>
+      </div>
+
+      <div class="col-12 d-inline-flex justify-content-center px-3 rounded-3">
+        <div class="m-2 d-inline-flex">
+          <button
+            class="btn btn-secondary"
+            color="primary"
+            (click)="openDialog1()"
+          >
+            Add Event
+          </button>
+        </div>
+        <div class="m-2">
+          <button
+            class="btn btn-secondary"
+            color="primary"
+            (click)="convertToPDF()"
+          >
+            convertToPDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-6 col-lg-12 mb-4 mb-lg-0">
+  <div class="bg-card p-3 mb-3 rounded-3">
+    <div class="box bg-secondary p-3 mb-3 rounded-3">
+      <full-calendar
+        id="schedule"
+        *ngIf="calendarVisible"
+        [options]="calendarOptions"
+      ></full-calendar>
+    </div>
+  </div>
+</div>

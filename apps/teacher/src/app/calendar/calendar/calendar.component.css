@@ -1,0 +1,32 @@
+.fc {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.example-section {
+  margin: 12px 0;
+}
+
+.example-margin {
+  margin: 0 12px;
+}
+
+.convert-button {
+  margin: 20px;
+  float: right;
+}
+
+.convert-button h1 {
+  text-align: center;
+}
+
+.wrapper {
+  border: 1px solid #a0a0a0;
+  padding: 20px 20px;
+  padding-bottom: 70px;
+  background: #ffff;
+  box-shadow: 3px 3px rgb(177 177 177);
+  border-radius: 10px;
+  margin: 0 20px;
+}

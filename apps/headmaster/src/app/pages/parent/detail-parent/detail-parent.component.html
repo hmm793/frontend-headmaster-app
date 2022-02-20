@@ -1,0 +1,81 @@
+<div class="container-detail">
+  <div class="title">
+    <p>My Profil</p>
+  </div>
+  <div class="box-detail">
+    <div class="profil">
+      <div class="photo">
+        <img class="photo-profil" src="{{ parentData?.image }}" alt="" />
+      </div>
+    </div>
+    <div class="bio">
+      <div class="edit">
+        <a routerLink="/parentedit/{{ parentData?._id }}">
+          <button mat-raised-button color="primary">Edit Profil</button>
+        </a>
+      </div>
+      <div class="name-profil" disabled="true">
+        <p>{{ parentData?.first_name }}</p>
+      </div>
+      <div class="box-name">
+        <div class="name1">ID :</div>
+        <div class="name2" name="id" disabled="true">{{ parentData?._id }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Name</span> :</div>
+        <div class="name2">
+          {{ parentData?.first_name }} {{ parentData?.last_name }}
+        </div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Gender</span> :</div>
+        <div class="name2" disabled="true">{{ parentData?.gender }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Date of Birth</span> :</div>
+        <div class="name2" disabled="true">{{ parentData?.date_of_birth }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span> Occupation</span> :</div>
+        <div class="name2" disabled="true">
+          {{ parentData?.occupation }}
+        </div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Blood Group</span> :</div>
+        <div class="name2" disabled="true">{{ parentData?.blood_group }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Religion</span> :</div>
+        <div class="name2" disabled="true">{{ parentData?.religion }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Email</span> :</div>
+        <div class="name2" disabled="true">{{ parentData?.email }}</div>
+      </div>
+
+      <div class="box-name">
+        <div class="name1"><span>Address</span> :</div>
+        <div class="name2" disabled="true">{{ parentData?.address }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Phone</span> :</div>
+        <div class="name2" disabled="true">{{ parentData?.phone }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Status</span> :</div>
+        <div class="name2" disabled="true">{{ parentData?.status }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Child</span> :</div>
+        <div class="name2" disabled="true">
+          <ul>
+            <li *ngFor="let data of parentData?.child">
+              {{ data.first_name }} {{ data.last_name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

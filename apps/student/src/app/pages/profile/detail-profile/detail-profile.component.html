@@ -1,0 +1,97 @@
+<div class="title-profil">
+  <p>My Profile</p>
+</div>
+<div class="container-detail">
+  <div class="box-detail">
+    <div class="profil">
+      <div class="photo">
+        <img class="photo-profil" src="{{ studentData.image }}" alt="" />
+      </div>
+    </div>
+    <div class="bio">
+      <div class="edit"><a routerLink="/edit-profile">
+        <button mat-raised-button color="primary">Edit Profil</button>
+      </a>
+      </div>
+      <div class="name-profil" disabled="true">
+        <p>{{ studentData.first_name }}</p>
+      </div>
+      <div class="box-name">
+        <div class="name1">ID :</div>
+        <div class="name2" name="id" disabled="true">{{ studentData._id }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Name</span> :</div>
+        <div class="name2">
+          {{ studentData.first_name }} {{ studentData.last_name }}
+        </div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Gender</span> :</div>
+        <div class="name2" disabled="true">{{ studentData.gender }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Father Name</span> :</div>
+        <div class="name2" disabled="true">{{ studentData.father_name }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Mother Name</span> :</div>
+        <div class="name2" disabled="true">{{ studentData.mother_name }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Date of Birth</span> :</div>
+        <div class="name2" disabled="true">{{ studentData.date_of_birth }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Father Occupation</span> :</div>
+        <div class="name2" disabled="true">
+          {{ studentData.father_occupation }}
+        </div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Blood Group</span> :</div>
+        <div class="name2" disabled="true">{{ studentData.blood_group }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Religion</span> :</div>
+        <div class="name2" disabled="true">{{ studentData.religion }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Email</span> :</div>
+        <div class="name2" disabled="true">{{ studentData.email }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Year Academic</span> :</div>
+        <div class="name2" disabled="true">{{ studentData.year_academic }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Addmission Date</span> :</div>
+        <div class="name2" disabled="true">
+          {{ studentData.addmission_date }}
+        </div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Kelas</span> :</div>
+        <div class="name2" disabled="true">
+          {{ studentData.kelas?.class_name }}
+        </div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Address</span> :</div>
+        <div class="name2" disabled="true">{{ studentData.address }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Phone</span> :</div>
+        <div class="name2" disabled="true">{{ studentData.phone }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Short Bio</span> :</div>
+        <div class="name2" disabled="true">{{ studentData.short_bio }}</div>
+      </div>
+      <div class="box-name">
+        <div class="name1"><span>Status</span> :</div>
+        <div class="name2" disabled="true">{{ studentData.status }}</div>
+      </div>
+    </div>
+  </div>
+</div>

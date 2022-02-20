@@ -1,0 +1,159 @@
+<div class="title-edit">
+  <p>Edit Profil</p>
+</div>
+<div class="container">
+  <div class="detail-profil">
+    <div class="photo">
+      <div class="container-profil">
+        <img
+          [src]="imageDisplay ? imageDisplay : imageTeacher"
+          alt=""
+          style="width: 200px"
+          class="photo-profil"
+        />
+      </div>
+
+      <form [formGroup]="formImage">
+        <input
+          accept="image/*"
+          (change)="editImage($event)"
+          class="form-control"
+          type="file"
+          id="formFile"
+        />
+      </form>
+      <div class="save-image">
+        <input type="submit" (click)="submitImage()" value="Save" />
+      </div>
+    </div>
+    <div class="bio">
+      <form [formGroup]="form">
+        <label for="validationCustom01" class="form-label">First name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          value="Mark"
+          required
+          formControlName="first_name"
+          name="firs_tname"
+        />
+        <small *ngIf="teacherForm['first_name'].invalid && isSubmitted"
+          >*First Name is required</small
+        >
+
+        <label for="validationCustom01" class="form-label">Last name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          value="Mark"
+          required
+          formControlName="last_name"
+          name="last_name"
+        />
+        <small *ngIf="teacherForm['last_name'].invalid && isSubmitted"
+          >*Last Name is required</small
+        >
+
+        <label for="validationCustom01" class="form-label">Gender</label>
+
+        <select formControlName="gender" [(ngModel)]="selectedGender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <small *ngIf="teacherForm['gender'].invalid && isSubmitted"
+          >*Gender is required</small
+        >
+
+        <label for="date_of_birth">Date of Birth</label>
+        <br />
+        <input
+          formControlName="date_of_birth"
+          type="date"
+          id="date_of_birth"
+          name="date_of_birth"
+        />
+        <small *ngIf="teacherForm['date_of_birth'].invalid && isSubmitted"
+          >*Date of birth is required</small
+        >
+        <br />
+
+        <label for="blood_group">Blood Group</label>
+        <select formControlName="blood_group" [(ngModel)]="selectedBloodGroup">
+          <option value="A-">A-</option>
+          <option value="A+">A+</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="AB-">AB-</option>
+          <option value="AB+">AB+</option>
+        </select>
+
+        <small *ngIf="teacherForm['blood_group'].invalid && isSubmitted"
+          >*Blood Group is required</small
+        >
+
+        <label for="religion">Religion</label>
+        <select formControlName="religion" [(ngModel)]="selectedReligion">
+          <option value="Islam">Islam</option>
+          <option value="Hindu">Hindu</option>
+          <option value="Buddhist">Buddhist</option>
+          <option value="Christian">Christian</option>
+          <option value="Others">Others</option>
+        </select>
+
+        <small *ngIf="teacherForm['religion'].invalid && isSubmitted"
+          >*Religion is required</small
+        >
+
+        <label for="email">Email</label>
+        <input formControlName="email" type="text" id="email" name="email" />
+        <small
+          *ngIf="teacherForm['email'].invalid && isSubmitted"
+          class="p-error"
+          ><span *ngIf="teacherForm['email'].errors?.['required']"
+            >*Email is required</span
+          >
+          <span *ngIf="teacherForm['email'].errors?.['email']"
+            >*Email is invalid</span
+          ></small
+        >
+
+        <label for="address">Address</label>
+        <input
+          formControlName="address"
+          type="text"
+          id="address"
+          name="address"
+        />
+
+        <small *ngIf="teacherForm['address'].invalid && isSubmitted"
+          >*Address is required</small
+        >
+
+        <label for="phone">Phone</label>
+        <input formControlName="phone" type="text" id="phone" name="phone" />
+
+        <small *ngIf="teacherForm['phone'].invalid && isSubmitted"
+          >*Phone is required</small
+        >
+
+        <label for="short_bio">Short Bio</label>
+        <input
+          formControlName="short_bio"
+          type="text"
+          id="short_bio"
+          name="short_bio"
+        />
+
+        <small *ngIf="teacherForm['short_bio'].invalid && isSubmitted"
+          >*Short Bio is required</small
+        >
+      </form>
+      <br />
+      <input type="submit" (click)="editTeacher()" value="Edit Student Data" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<mat-tab-group>
+  <div class="box-class">
+    <mat-tab label="All Students">
+      <table id="classess">
+        <tr>
+          <th>Id</th>
+          <th>Kelas</th>
+          <th>Home Room Teacher</th>
+          <th>Subject</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+        <tr *ngFor="let data of kelas">
+          <td>
+            <p>{{ data?.id }}</p>
+          </td>
+          <td>
+            <p>{{ data?.class_name }}</p>
+          </td>
+          <td>
+            <p>
+              {{ data?.teacher?.first_name }} {{ data?.teacher?.last_name }}
+            </p>
+          </td>
+          <td>
+            <p *ngFor="let data of data.subject">{{ data.subject_name }}</p>
+          </td>
+          <td>
+            <p>{{ data?.teacher?.email }}</p>
+          </td>
+          <td>
+            <p>{{ data?.teacher?.phone }}</p>
+          </td>
+        </tr>
+      </table>
+    </mat-tab>
+    <mat-tab label="Score by Class">
+      <h4>Score</h4>
+
+      <mat-tab-group>
+        <mat-tab label="{{ kelas.class_name }}" *ngFor="let kelas of kelas">
+          <headmaster-class-by-score
+            [parentData]="kelas._id"
+          ></headmaster-class-by-score>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-tab>
+    <mat-tab label="Ranking by Class">
+      <h4>Ranking</h4>
+
+      <mat-tab-group>
+        <mat-tab label="{{ kelas.class_name }}" *ngFor="let kelas of kelas">
+          <headmaster-rank-by-class
+            [parentData]="kelas._id"
+          ></headmaster-rank-by-class>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-tab>
+  </div>
+</mat-tab-group>

@@ -1,0 +1,74 @@
+<!-- <div id="table">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Kelas</th>
+      <th>Nilai</th>
+      <th>Aksi</th>
+    </tr>
+    <tr *ngFor="let student of studentData; let i = index">
+      <td>
+        {{ student.id }}
+      </td>
+      <td>
+        {{ student.name }}
+      </td>
+      <td>
+        {{ infoKelas.class_name }}
+      </td>
+      <td>
+        <input type="text" #nilaiValue placeholder="{{ student.nilai }}" />
+      </td>
+      <td>
+        <button
+          mat-raised-button
+          (click)="changeValue(i, 'nilai', nilaiValue.value)"
+        >
+          Update
+        </button>
+      </td>
+    </tr>
+  </table>
+</div> -->
+<div class="title-score">
+  <p>Set Score</p>
+</div>
+<div class="container">
+  <table id="table">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Kelas</th>
+      <th>Nilai</th>
+      <th>Aksi</th>
+    </tr>
+    <tr *ngFor="let student of studentData; let i = index">
+      <td>
+        {{ student.id }}
+      </td>
+      <td>
+        {{ student.name }}
+      </td>
+      <td>
+        {{ infoKelas.class_name }}
+      </td>
+      <td>
+        <input type="text" #nilaiValue placeholder="{{ student.nilai }}" />
+      </td>
+      <td>
+        <button
+          class="btn-update"
+          mat-raised-button
+          (click)="changeValue(i, 'nilai', nilaiValue.value)"
+        >
+          Update
+        </button>
+      </td>
+    </tr>
+  </table>
+
+  <button class="btn-submit" mat-raised-button (click)="submit()">
+    Submit
+  </button>
+</div>

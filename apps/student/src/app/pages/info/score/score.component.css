@@ -1,0 +1,22 @@
+table {
+  width: 100%;
+  
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
+}
+.title-score{
+  text-align: center;
+  font-size: 40px;
+  margin: 38px;
+  color: #ffffffa3;
+}
+
+.wrapper {
+  border-radius: 10px;
+  background: #fff;
+}
+.mat-table {
+  background:none;
+}

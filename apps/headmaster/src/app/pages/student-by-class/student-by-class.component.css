@@ -1,0 +1,124 @@
+/* table {
+  margin-top: 50px;
+  margin: 0 auto;
+}
+table th {
+  border-bottom: 1px solid black;
+  padding: 0 65px;
+}
+.container-table {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+.mat-tab-label .mat-tab-label-content {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  color: black !important;
+}
+.title {
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 18px;
+  margin-left: 35px;
+}
+.route {
+  font-size: 15px;
+  margin-top: 25px;
+  margin-left: 40px;
+}
+span {
+  color: #cd3a0e;
+}
+.name-form {
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 28px;
+  margin-top: 70px;
+  margin-left: 100px;
+}
+.box-form {
+  border: 1px solid;
+  width: 90%;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 11px;
+}
+li {
+  list-style: none;
+}
+input[type='text'] {
+  margin: 0 45px;
+}
+input[type='date'] {
+  margin: 0 53px;
+}
+select {
+  margin: 0 38px;
+}
+input[type='date'].form-control {
+  margin-left: 0;
+}
+form {
+  width: 70%;
+  margin: 0 auto;
+}
+.gender span {
+  color: #212529;
+} */
+
+.statis {
+	color: var(--dk-gray-100);
+  width: 100%;
+}
+
+.statis .box {
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px;
+  
+}
+
+.statis .box h3:after {
+	content: "";
+	height: 2px;
+	width: 70%;
+	margin: auto;
+	background-color: rgba(255, 255, 255, 0.12);
+	display: block;
+	margin-top: 10px;
+}
+
+.statis .box i {
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	font-size: 22px;
+	padding: 15px;
+	top: -25px;
+	left: -25px;
+	background-color: rgba(255, 255, 255, 0.15);
+	line-height: 60px;
+	text-align: right;
+	border-radius: 50%;
+}
+
+.main-color {
+	color: #ffc107
+}
+
+.bg-cards {
+  background-color: #31353D;
+}
+
+.text-cards {
+  color: lightgray;
+  font-size: 20px;
+}
+
+.chart-box {
+  text-align: -webkit-center;
+  margin: 20px;
+}
